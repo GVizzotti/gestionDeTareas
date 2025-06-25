@@ -1,0 +1,23 @@
+# Archivos de EV
+/venv/
+.venv/
+*/venv/
+
+# Base de datos de SQLite
+*.db
+*.sqlite
+*.sqlite3
+
+# Archivos de caché de Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Archivos de configuración de IDEs 
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Archivos del sistema operativo
+Thumbs.db
