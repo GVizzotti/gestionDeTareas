@@ -146,16 +146,38 @@ def gestionar_tareas():
         usuario = db.session.get(Usuario, usuario_id)
         tareas_usuario = Tarea.query.filter_by(usuario_id=usuario_id).all()
         
-        html_response = f"<h1>Bienvenido, {usuario.nombre_usuario}!</h1>"
+        # Cntenido dinámico
+        contenido_body = f"<h1>¡Bienvenido, {usuario.nombre_usuario}!</h1>"
         if not tareas_usuario:
-            html_response += "<p>No tenés tareas pendientes. ¡Felicidades!</p>"
+            contenido_body += "<p>No tienes tareas pendientes. ¡Felicidades!</p>"
         else:
-            html_response += "<h2>Tus tareas:</h2><ul>"
+            contenido_body += "<h2>Tus tareas:</h2><ul>"
             for tarea in tareas_usuario:
-                html_response += f"<li><b>{tarea.titulo}</b>: {tarea.descripcion or 'Sin descripción'}</li>"
-            html_response += "</ul>"
-        
-        return html_response
+                contenido_body += f"<li><b>{tarea.titulo}</b>: {tarea.descripcion or 'Sin descripción'}</li>"
+            contenido_body += "</ul>"
+
+        # Estructura HTML completa
+        html_response = f'''
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tareas de {usuario.nombre_usuario}</title>
+    <style>
+        body {{ font-family: sans-serif; margin: 2em; }}
+        ul {{ list-style-type: square; }}
+    </style>
+</head>
+<body>
+    {contenido_body}
+</body>
+</html>
+'''
+        from flask import make_response
+        respuesta = make_response(html_response)
+        respuesta.headers['Content-Type'] = 'text/html'
+        return respuesta
 
 
 

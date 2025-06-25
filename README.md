@@ -37,4 +37,4 @@ En la segunda terminal, ejecuta el cliente de consola para empezar a usar el sis
     ```
     python cliente.py
     ```
-¡Y listo! Ahora puedes seguir las instrucciones del menú en la consola para registrarte, iniciar sesión y gestionar tus tareas.
+¡Y listo! Ahora sigue las instrucciones del menú en la consola para registrarte, iniciar sesión y gestionar tus tareas.

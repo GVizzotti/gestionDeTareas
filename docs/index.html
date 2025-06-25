@@ -70,7 +70,10 @@
     <div class="container">
         <header>
             <h1>Sistema de Gestión de Tareas con API y Base de Datos</h1>
-            <p>Documentación oficial del proyecto final. Este proyecto demuestra la implementación de una API REST con Flask, gestión de usuarios, autenticación usando <strong>bcrypt</strong> y una base de datos SQLite.</p>
+            <p>Documentación de la PFO2 Programación  sobre redes. Este proyecto demuestra la implementación de una API REST con Flask, gestión de usuarios, autenticación usando <strong>bcrypt</strong> y una base de datos SQLite.</p>
+            <p><strong>Alumno: </strong> Guido Vizzotti - Comision B</p>
+            <p><strong> Comisión: </strong>  B</p>
+            <a href="https://github.com/GVizzotti/gestionDeTareas">Ver el Repositorio en GitHub</a>
         </header>
 
         <main>
@@ -79,11 +82,13 @@
                 <h2>1. Instalación</h2>
                 <p>Para configurar el proyecto en tu máquina local, sigue estos sencillos pasos. Asegúrate de tener Python 3 y pip instalados.</p>
                 <ol>
-                    <li>Clona o descarga el repositorio desde GitHub.</li>
-                    <li>Abre una terminal en la carpeta del proyecto.</li>
-                    <li>Instala todas las dependencias necesarias con un solo comando:</li>
+                    <li>Cloná o descargá el repositorio desde GitHub.</li>
+                        <pre><code>git clone https://github.com/GVizzotti/gestionDeTareas.git   </code></pre>
+                    <li>Abrí una terminal en la carpeta del proyecto.</li>
+                    <li>Instalá todas las dependencias necesarias con un solo comando:</li>
+                        <pre><code>pip install -r requirements.txt</code></pre>
                 </ol>
-                <pre><code>pip install -r requirements.txt</code></pre>
+
             </section>
 
             <!-- SECCIÓN DE EJECUCIÓN -->
@@ -91,11 +96,11 @@
                 <h2>2. Ejecución</h2>
                 <p>Para correr la aplicación, necesitarás dos terminales abiertas.</p>
                 <h3>Terminal 1: Iniciar el Servidor</h3>
-                <p>En esta terminal, inicia la API de Flask. El servidor se encargará de gestionar los datos y la lógica.</p>
+                <p>En esta terminal, iniciá la API de Flask. El servidor se encargará de gestionar los datos y la lógica.</p>
                 <pre><code>python servidor.py</code></pre>
                 
                 <h3>Terminal 2: Ejecutar el Cliente</h3>
-                <p>En la segunda terminal, ejecuta el cliente de consola para interactuar con el sistema.</p>
+                <p>En la segunda terminal, ejecutá el cliente de consola para interactuar con el sistema.</p>
                 <pre><code>python cliente.py</code></pre>
             </section>
 
@@ -107,37 +112,39 @@
                 <div>
                     <h4>Paso 1: Registro de un Nuevo Usuario</h4>
                     <p>El primer paso es crear una cuenta. El cliente solicita un nombre de usuario y una contraseña.</p>
-                    <img src="docs/screenshots/registro.png" alt="Captura de pantalla del registro de usuario">
+                    <img src="img/registro.png" alt="Captura de pantalla del registro de usuario">
+                    <p>Si el registro es exitoso, se creará un usuario en la base de datos con la contraseña hasheada</p>
+                    <img src="img/usuario.png" alt="Captura de pantalla del usuario">
                 </div>
 
                 <div>
                     <h4>Paso 2: Inicio de Sesión</h4>
                     <p>Una vez registrado, el usuario puede iniciar sesión con sus credenciales.</p>
-                    <img src="docs/screenshots/login.png" alt="Captura de pantalla del inicio de sesión">
+                    <img src="img/login.png" alt="Captura de pantalla del inicio de sesión">
                 </div>
 
                 <div>
                     <h4>Paso 3: Ver Tareas (Inicialmente Vacías)</h4>
                     <p>Tras iniciar sesión, el usuario puede consultar sus tareas. Si es un usuario nuevo, la lista aparecerá vacía.</p>
-                    <img src="docs/screenshots/ver_tareas_vacias.png" alt="Captura de pantalla mostrando la lista de tareas vacía">
+                    <img src="img/ver_tareas_vacias.png" alt="Captura de pantalla mostrando la lista de tareas vacía">
                 </div>
                 
                 <div>
                     <h4>Paso 4: Crear una Nueva Tarea</h4>
                     <p>El usuario puede añadir una nueva tarea proporcionando un título y una descripción opcional.</p>
-                    <img src="docs/screenshots/crear_tarea.png" alt="Captura de pantalla de la creación de una nueva tarea">
+                    <img src="img/crear_tarea.png" alt="Captura de pantalla de la creación de una nueva tarea">
                 </div>
                 
                 <div>
                     <h4>Paso 5: Ver Tareas Actualizadas</h4>
                     <p>Después de crear una tarea, al volver a consultar la lista, esta aparecerá actualizada.</p>
-                    <img src="docs/screenshots/ver_tareas_actualizadas.png" alt="Captura de pantalla mostrando la lista de tareas actualizada">
+                    <img src="img/ver_tareas_actualizadas.png" alt="Captura de pantalla mostrando la lista de tareas actualizada">
                 </div>
 
                 <div>
-                    <h4>Paso 6: Cerrar Sesión</h4>
-                    <p>Finalmente, el usuario puede cerrar su sesión de forma segura, volviendo al menú principal.</p>
-                    <img src="docs/screenshots/logout.png" alt="Captura de pantalla del cierre de sesión">
+                    <h4>Paso 6: Cerrar Sesión </h4>
+                    <p>Finalmente, el usuario puede cerrar su sesión de forma segura, volviendo al menú principal, y si lo desea, salir del sistema.</p>
+                    <img src="img/logout.png" alt="Captura de pantalla del cierre de sesión">
                 </div>
             </section>
 
