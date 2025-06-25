@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF--8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentación: Sistema de Gestión de Tareas</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f6f8fa;
+            color: #24292e;
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #d1d5da;
+            border-radius: 6px;
+        }
+        h1, h2, h3 {
+            border-bottom: 1px solid #eaecef;
+            padding-bottom: 0.3em;
+            margin-top: 24px;
+            margin-bottom: 16px;
+        }
+        h1 { font-size: 2em; }
+        h2 { font-size: 1.5em; }
+        h3 { font-size: 1.25em; }
+        code {
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            background-color: rgba(27,31,35,0.05);
+            padding: 0.2em 0.4em;
+            margin: 0;
+            font-size: 85%;
+            border-radius: 3px;
+        }
+        pre {
+            background-color: #f6f8fa;
+            padding: 16px;
+            overflow: auto;
+            border-radius: 3px;
+            border: 1px solid #d1d5da;
+        }
+        pre code {
+            background-color: transparent;
+            padding: 0;
+            margin: 0;
+            font-size: 100%;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #d1d5da;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #586069;
+        }
+        ul { padding-left: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sistema de Gestión de Tareas con API y Base de Datos</h1>
+            <p>Documentación oficial del proyecto final. Este proyecto demuestra la implementación de una API REST con Flask, gestión de usuarios, autenticación usando <strong>bcrypt</strong> y una base de datos SQLite.</p>
+        </header>
+
+        <main>
+            <!-- SECCIÓN DE INSTALACIÓN -->
+            <section id="instalacion">
+                <h2>1. Instalación</h2>
+                <p>Para configurar el proyecto en tu máquina local, sigue estos sencillos pasos. Asegúrate de tener Python 3 y pip instalados.</p>
+                <ol>
+                    <li>Clona o descarga el repositorio desde GitHub.</li>
+                    <li>Abre una terminal en la carpeta del proyecto.</li>
+                    <li>Instala todas las dependencias necesarias con un solo comando:</li>
+                </ol>
+                <pre><code>pip install -r requirements.txt</code></pre>
+            </section>
+
+            <!-- SECCIÓN DE EJECUCIÓN -->
+            <section id="ejecucion">
+                <h2>2. Ejecución</h2>
+                <p>Para correr la aplicación, necesitarás dos terminales abiertas.</p>
+                <h3>Terminal 1: Iniciar el Servidor</h3>
+                <p>En esta terminal, inicia la API de Flask. El servidor se encargará de gestionar los datos y la lógica.</p>
+                <pre><code>python servidor.py</code></pre>
+                
+                <h3>Terminal 2: Ejecutar el Cliente</h3>
+                <p>En la segunda terminal, ejecuta el cliente de consola para interactuar con el sistema.</p>
+                <pre><code>python cliente.py</code></pre>
+            </section>
+
+<!-- SECCIÓN DE DEMOSTRACIÓN (CAPTURAS) -->
+            <section id="demo">
+                <h2>3. Demostración y Pruebas</h2>
+                <p>A continuación se muestra el flujo de uso completo del cliente de consola, desde el registro hasta el cierre de sesión.</p>
+
+                <div>
+                    <h4>Paso 1: Registro de un Nuevo Usuario</h4>
+                    <p>El primer paso es crear una cuenta. El cliente solicita un nombre de usuario y una contraseña.</p>
+                    <img src="docs/screenshots/registro.png" alt="Captura de pantalla del registro de usuario">
+                </div>
+
+                <div>
+                    <h4>Paso 2: Inicio de Sesión</h4>
+                    <p>Una vez registrado, el usuario puede iniciar sesión con sus credenciales.</p>
+                    <img src="docs/screenshots/login.png" alt="Captura de pantalla del inicio de sesión">
+                </div>
+
+                <div>
+                    <h4>Paso 3: Ver Tareas (Inicialmente Vacías)</h4>
+                    <p>Tras iniciar sesión, el usuario puede consultar sus tareas. Si es un usuario nuevo, la lista aparecerá vacía.</p>
+                    <img src="docs/screenshots/ver_tareas_vacias.png" alt="Captura de pantalla mostrando la lista de tareas vacía">
+                </div>
+                
+                <div>
+                    <h4>Paso 4: Crear una Nueva Tarea</h4>
+                    <p>El usuario puede añadir una nueva tarea proporcionando un título y una descripción opcional.</p>
+                    <img src="docs/screenshots/crear_tarea.png" alt="Captura de pantalla de la creación de una nueva tarea">
+                </div>
+                
+                <div>
+                    <h4>Paso 5: Ver Tareas Actualizadas</h4>
+                    <p>Después de crear una tarea, al volver a consultar la lista, esta aparecerá actualizada.</p>
+                    <img src="docs/screenshots/ver_tareas_actualizadas.png" alt="Captura de pantalla mostrando la lista de tareas actualizada">
+                </div>
+
+                <div>
+                    <h4>Paso 6: Cerrar Sesión</h4>
+                    <p>Finalmente, el usuario puede cerrar su sesión de forma segura, volviendo al menú principal.</p>
+                    <img src="docs/screenshots/logout.png" alt="Captura de pantalla del cierre de sesión">
+                </div>
+            </section>
+
+            <!-- SECCIÓN DE RESPUESTAS CONCEPTUALES -->
+            <section id="conceptos">
+                <h2>4. Respuestas Conceptuales</h2>
+                
+                <h3>¿Por qué es crucial hashear las contraseñas?</h3>
+                <p>
+                    Hashear contraseñas impide que sean almacenadas en texto plano. Esto protege los datos del usuario si la base de datos es comprometida. Los hashes no son reversibles, lo cual evita que alguien pueda ver la contraseña original. En lugar de almacenar las contraseñas en texto plano, se transforman en una cadena de caracteres única e irreversible mediante un algoritmo como <strong>bcrypt</strong>, garantizando así la protección de la información del usuario.
+                </p>
+
+                <h3>Ventajas de usar SQLite en este proyecto</h3>
+                <p>
+                    SQLite es una opción ideal para proyectos pequeños como este, ya que no requiere la configuración de un servidor y almacena los datos en un archivo local. Es una solución simple y eficiente, adecuada para un sistema básico de gestión de tareas. Al no necesitar un servidor de base de datos separado, consume muy pocos recursos del sistema, lo que la convierte en una excelente opción para el desarrollo local. Además, al estar encapsulada en un solo archivo, es increíblemente fácil de copiar, compartir y respaldar. En resumen, el proyecto completo es autocontenido y accesible.
+                </p>
+
+            </section>
+        </main>
+
+        <footer>
+            <p>Desarrollado por Guido Vizzotti - 2025</p>
+        </footer>
+    </div>
+</body>
+</html>
